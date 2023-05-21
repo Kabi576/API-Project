@@ -19,3 +19,11 @@ def get_weather_history():
     end_date = request.json.get('end_date')
     return jsonify(weather_history_data)
     
+{
+  "location": "New York"
+}
+{
+  "temperature": 25,
+  "humidity": 70,
+  "description": "Sunny"
+}
