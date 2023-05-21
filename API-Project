@@ -27,3 +27,6 @@ def get_weather_history():
   "humidity": 70,
   "description": "Sunny"
 }
+@app.errorhandler(400)
+def bad_request_error(error):
+    return jsonify({'error': 'Invalid location provided'}), 400
