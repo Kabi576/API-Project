@@ -1,0 +1,21 @@
+from flask import Flask, request, jsonify
+
+app = Flask(Apro)
+
+@app.route('/weather/current', methods=['POST'])
+def get_current_weather():
+    location = request.json.get('location')
+    return jsonify(current_weather_data)
+
+@app.route('/weather/forecast', methods=['POST'])
+def get_weather_forecast():
+    location = request.json.get('location')
+    return jsonify(weather_forecast_data)
+
+@app.route('/weather/history', methods=['POST'])
+def get_weather_history():
+    location = request.json.get('location')
+    start_date = request.json.get('start_date')
+    end_date = request.json.get('end_date')
+    return jsonify(weather_history_data)
+    
