@@ -30,3 +30,12 @@ def get_weather_history():
 @app.errorhandler(400)
 def bad_request_error(error):
     return jsonify({'error': 'Invalid location provided'}), 400
+    
+import logging
+
+logging.basicConfig(filename='api.log', level=logging.DEBUG)
+
+@app.after_request
+def log_response(response):
+    app.logger.info(f'{request.method} {request.path} - {response.status}')
+    return response
